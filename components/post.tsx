@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Post } from "@/type/post";
 import LikeButton from "./like-button";
 import { togglePostLikeStatus } from "@/actions/posts-action";
-import { updatePostLikeStatus } from "@/lib/posts";
 import { useOptimistic } from "react";
 
 type PostComponentProps = {
