@@ -4,6 +4,7 @@ import { Post } from "@/type/post";
 import LikeButton from "./like-button";
 import { togglePostLikeStatus } from "@/actions/posts-action";
 import { useOptimistic } from "react";
+import Link from "next/link";
 
 type PostComponentProps = {
   post: Post;
@@ -57,7 +58,7 @@ export function PostComponent({ post, custom_action }: PostComponentProps) {
           </div>
 
           <span className="rounded-full bg-surface-secondary px-4 py-2 text-sm text-text-muted">
-            {new Date(currentPost.created_at).toLocaleDateString("en-GB", {
+            {new Date(currentPost.createdAt).toLocaleDateString("en-GB", {
               day: "2-digit",
               month: "long",
               year: "numeric",
@@ -119,7 +120,35 @@ export default function PostsComponent({posts}: PostsComponentProps) {
   });
   
   if(!optmisticPosts || optmisticPosts.length===0) {
-    return <p>No Posts</p>
+    return (
+      <>
+        <section className="flex min-h-[70vh] items-center justify-center px-6">
+      <div className="max-w-lg rounded-3xl border border-border bg-surface p-12 text-center shadow-card">
+
+        <div className="mx-auto mb-8 flex h-24 w-24 items-center justify-center rounded-full bg-primary/10">
+          <span className="text-5xl">📝</span>
+        </div>
+
+        <h2 className="mb-4 text-4xl font-bold text-text">
+          No Posts Yet
+        </h2>
+
+        <p className="mb-8 text-lg leading-8 text-text-muted">
+          Looks like there aren't any posts yet.
+          Start the conversation by creating your first post.
+        </p>
+
+        <Link
+          href="/new-post"
+          className="inline-flex items-center rounded-xl bg-primary-medium px-8 py-3 font-semibold text-white transition hover:bg-primary-dark"
+        >
+          + Create First Post
+        </Link>
+
+      </div>
+    </section>
+      </>
+    )
   }
   async function updatePost(postId:number) {
     updateOptmisticPosts(postId);

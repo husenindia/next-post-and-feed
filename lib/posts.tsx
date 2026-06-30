@@ -119,7 +119,7 @@ export async function storePost(
     post.imageUrl,
     post.title,
     post.content,
-    post.userId
+    post.userId,
   );
 }
 

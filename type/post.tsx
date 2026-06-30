@@ -3,7 +3,7 @@ export type Post = {
     title: string,
     image: string,
     content: string,
-    created_at: string,
+    createdAt: string,
     userFirstName: string,
     userLastName: string,
     likes: number,

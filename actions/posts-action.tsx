@@ -40,6 +40,7 @@ export async function createPostAction(prevState: FormState, formData: FormData)
           title: title,
           content: content,
           userId: 1,
+          created_at: new Date().toISOString(),
         })
         revalidatePath("/feed");
         redirect("/feed");
