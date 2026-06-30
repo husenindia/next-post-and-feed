@@ -1,26 +1,57 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+@theme {
+  /* Brand */
+  --color-primary-dark: #272757;
+  --color-primary: #8686AC;
+  --color-primary-medium: #505081;
+  --color-primary-darker: #0F0E47;
+
+  /* Background */
+  --color-background: #F6F5FF;
+  --color-surface: #FFFFFF;
+  --color-surface-secondary: #EDEBFA;
+
+  /* Text */
+  --color-text: #272757;
+  --color-text-muted: #505081;
+  --color-text-light: #FFFFFF;
+
+  /* Border */
+  --color-border: #D8D6F0;
+  --color-border-focus: #8686AC;
+
+  /* Status */
+  --color-success: #10B981;
+  --color-danger: #EF4444;
+
+  /* Radius */
+  --radius-sm: .375rem;
+  --radius-md: .5rem;
+  --radius-lg: .75rem;
+  --radius-xl: 1rem;
+
+  /* Shadow */
+  --shadow-card:
+    0 10px 30px rgba(39,39,87,.08),
+    0 4px 12px rgba(39,39,87,.04);
+
+  --color-button: #505081;
+  --color-button-hover: #272757;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+body{
+  background:linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f8f7ff 30%,
+      #f6f5ff 100%
+  );
+
+  color:var(--color-text);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+.liked-icn, .liked .unliked-icn { display: none !important;}
+.liked .liked-icn { display: inline !important;}
