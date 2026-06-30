@@ -29,18 +29,26 @@ export async function createPostAction(prevState: FormState, formData: FormData)
           return { validationErrors };
         }
         let imageUrl;
+        
         try {
-          imageUrl = await uploadImage(image);
-        } catch {
-          throw new Error("Image upload failed");
+            imageUrl = await uploadImage(image);
+          } catch {
+            throw new Error("Image upload failed");
         }
-
-        await storePost({
-          imageUrl:imageUrl,
-          title: title,
-          content: content,
-          userId: 1,
+        try {
+          
+          await storePost({
+            imageUrl:imageUrl,
+            title: title,
+            content: content,
+            userId: 1,
         })
+        } catch (error) {
+          console.error("Database Error:", error);
+          throw error;
+        }
+        
+
         revalidatePath("/feed");
         redirect("/feed");
     }
