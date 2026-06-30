@@ -30,23 +30,23 @@ export async function createPostAction(prevState: FormState, formData: FormData)
         }
         let imageUrl;
         
-        try {
-            imageUrl = await uploadImage(image);
-          } catch {
-            throw new Error("Image upload failed");
-        }
         // try {
-          
-        //   await storePost({
-        //     imageUrl:imageUrl,
-        //     title: title,
-        //     content: content,
-        //     userId: 1,
-        // })
-        // } catch (error) {
-        //   console.error("Database Error:", error);
-        //   throw error;
+        //     imageUrl = await uploadImage(image);
+        //   } catch {
+        //     throw new Error("Image upload failed");
         // }
+        try {
+          
+          await storePost({
+            imageUrl:"Tests",
+            title: title,
+            content: content,
+            userId: 1,
+        })
+        } catch (error) {
+          console.error("Database Error:", error);
+          throw error;
+        }
         
 
         revalidatePath("/feed");
