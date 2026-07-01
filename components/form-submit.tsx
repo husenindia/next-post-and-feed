@@ -12,14 +12,14 @@ export default function FormSumbit() {
             <>
             <button
                 type="reset"
-                className="rounded-lg border border-primary-dark px-6 py-3 font-medium text-text transition hover:bg-primary-dark"
+                className="rounded-lg border border-primary-dark px-6 py-3 font-medium text-text transition hover:bg-primary-dark hover:text-white"
                 >
                 Reset
                 </button>
 
                 <button
                 type="submit"
-                className="rounded-lg bg-primary px-6 py-3 font-medium text-background transition hover:bg-primary-dark hover:text-text"
+                className="rounded-lg bg-primary-medium px-6 py-3 font-medium text-background transition hover:bg-primary-dark hover:text-white"
                 >
                 Create Post
                 </button>
