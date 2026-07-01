@@ -6,7 +6,7 @@ A modern **Post & Feed** application built with **Next.js 16**, demonstrating re
 
 ## 🌐 Live Demo
 
-**Live Application:** https://next-post-and-feed.vercel.app/
+**Live Application:** https://next-post-and-feed-production.up.railway.app/
 
 ## 📂 GitHub Repository
 
@@ -34,7 +34,7 @@ A modern **Post & Feed** application built with **Next.js 16**, demonstrating re
 - 📱 Fully Responsive UI
 - 🎨 Modern UI built with Tailwind CSS
 - 💾 SQLite Database
-- ☁️ Deployed on Vercel
+- ☁️ Deployed on Railway
 
 ---
 
@@ -106,7 +106,7 @@ All images are rendered using the Next.js `Image` component.
 
 ## Deployment
 
-- Vercel
+- Railway Cloud
 
 ---
 
@@ -290,17 +290,17 @@ This project demonstrates practical Next.js development including:
 - Tailwind CSS
 - TypeScript
 - Responsive Design
-- Vercel Deployment
+- Railway Cloud Deployment
 
 ---
 
 # 🚀 Deployment
 
-The project is deployed on **Vercel**.
+The project is deployed on **Railway Cloud**.
 
 Live URL:
 
-https://next-post-and-feed.vercel.app/
+https://next-post-and-feed-production.up.railway.app/
 
 ---
 
